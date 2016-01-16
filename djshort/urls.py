@@ -20,4 +20,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^(?P<slug>.*)$', 'redirect.views.redirect_view')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
