@@ -6,4 +6,6 @@ from redirect.models import Redirect
 
 def redirect_view(request, slug):
     redirect_obj = get_object_or_404(Redirect, slug=slug)
+    redirect_obj.add_count()
     return redirect(redirect_obj.destination)
+
