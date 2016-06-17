@@ -7,7 +7,7 @@ class Redirect(models.Model):
 
     destination = models.URLField(max_length=255)
 
-    count = models.IntegerField(default=0)
+    visit_count = models.IntegerField(default=0)
 
     created_at = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
@@ -16,5 +16,5 @@ class Redirect(models.Model):
         return '%s' % self.name
 
     def add_count(self):
-        self.count += 1
+        self.visit_count += 1
         self.save()
